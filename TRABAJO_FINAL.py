@@ -76,7 +76,7 @@ class Interface:
 
         Label(self.tk, textvariable=self.message, bg="orange").grid(row=8, column=1, columnspan=2)
 
-        self.text_pdf.insert(END, "/Users/Madepozo/ANTHONY/Repo/NN/PYTHON/ANALITICA/PDF/pdf.pdf")
+        self.text_pdf.insert(END, "PDF/pdf.pdf")
 
     def seleccionarImagen(self):
         filepath =  filedialog.askopenfilename(initialdir = "/Users/Madepozo/ANTHONY/Repo/NN/PYTHON/ANALITICA/images",
