@@ -57,7 +57,7 @@ class Interface:
         self.message = StringVar()
 
         # self.nombreImagen.set("images/img1.jpg")
-        self.nombreImagen.set("images/img2.jpg")
+        self.nombreImagen.set("images/img1.jpg")
 
         Button(self.tk, text="Select PIC", command=self.seleccionarImagen).grid(row=0, column=1, padx=20, pady=10)
         Button(self.tk, text="Select PDF", command=self.seleccionarPdfs).grid(row=1, column=1, padx=20, pady=10)
@@ -124,9 +124,10 @@ class Interface:
         self.message.set("RUNNING...")
         img_path = self.nombreImagen.get()
         pdf_paths = self.text_pdf.get(1.0, END).split("\n")[:-1]
+        THRESHOLD = 0.63
         print(img_path)
         print(pdf_paths)
-        matchTemplate = MatchTemplate(img_path, pdf_paths, 0.63, self)
+        matchTemplate = MatchTemplate(img_path, pdf_paths, THRESHOLD, self)
         matchTemplate.run()
 
 
